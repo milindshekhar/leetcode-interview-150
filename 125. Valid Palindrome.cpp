@@ -35,7 +35,7 @@ public:
 //TC- O(n) Two loops independent.
 //SC -O(n) Extra space to store string
 
-
+// Two Pointer Approach
 class Solution {
 public:
     bool isPalindrome(string s) {
