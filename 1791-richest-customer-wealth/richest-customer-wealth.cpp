@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+        int maxValue=INT_MIN;
+        for(int i=0;i<accounts.size();i++)
+        {
+            int wealth=0;
+            for(int j=0;j<accounts[i].size();j++)
+            {
+                wealth+=accounts[i][j];
+            }
+            maxValue=max(wealth,maxValue);
+        }
+        return maxValue;
+    }
+};
