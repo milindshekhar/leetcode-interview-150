@@ -1,15 +1,21 @@
 class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
-        int minLen=min(word1.size(),word2.size());
-        string ans;
-        for(int i=0;i<minLen;i++)
+        ostringstream oss;
+        int i=0,j=0;
+        while(i<word1.size() || j<word2.size())
         {
-            ans+=word1[i];
-            ans+=word2[i];
+            if(i<word1.size())
+            {
+                oss<<word1[i];
+                i++;
+            }
+            if(j<word2.size())
+            {
+                oss<<word2[j];
+                j++;
+            }
         }
-        ans.append(word1.begin()+minLen,word1.end());
-        ans.append(word2.begin()+minLen,word2.end());
-        return ans;
+        return oss.str();
     }
 };
