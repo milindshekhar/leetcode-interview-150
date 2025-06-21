@@ -1,15 +1,13 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n=nums.size();
-        for(int i=0;i<=n;i++)
+         int xor1=0,xor2=0;
+        for(int i=0;i<nums.size();i++)
         {
-           if( std::count(nums.begin(),nums.end(),i) == 0)
-           {
-            return i;
-           }
+            xor1=xor1^(i+1);
+            xor2=xor2^nums[i];
         }
-        return -1;
+        return xor1^xor2;
         
     }
 };
