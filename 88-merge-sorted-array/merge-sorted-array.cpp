@@ -29,10 +29,10 @@ public:
         for(int i=0;i<n+m;i++)
         {
             nums1[i]=nums3[i];
-            if(i>m)
-            {
-                nums2[i-m]=nums3[i];
-            }
+            // if(i>m)
+            // {
+            //     nums2[i-m]=nums3[i];
+            // }
         }
     }
 };
