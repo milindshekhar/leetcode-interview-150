@@ -1,19 +1,19 @@
 class Solution {
 public:
     int findContentChildren(vector<int>& g, vector<int>& s) {
-         int studentArraySize=g.size();
-        int cookieArraySize=s.size();
-        int studentPointer=0,cookiePointer=0;
         sort(g.begin(),g.end());
         sort(s.begin(),s.end());
-        while(studentPointer<studentArraySize && cookiePointer<cookieArraySize)
+        int greedSize=g.size();
+        int cookieSize=s.size();
+        int left=0,right=0;
+        while(left<greedSize && right<cookieSize)
         {
-            if(g[studentPointer]<=s[cookiePointer])
+            if(g[left]<=s[right])
             {
-                studentPointer++;
+                left++;
             }
-            cookiePointer++;
+            right++;
         }
-        return studentPointer;
+        return left;
     }
 };
